@@ -18,10 +18,10 @@ class Usuarios extends Controller
         if ($num==1) {
             $usuario = $ejecutar->getRow(0);
             if ($usuario->id_usuario == 1) {
-                echo "administrador";
+                return view('menuadmin');
             }
-            if ($usuario->id_usuario == 2)
-                echo "trabajador";
+            if ($usuario->id_usuario == 2);
+            return view('menutrabajador');
         } else {
             echo '<script>alert("Datos incorrectos")</script>';
             echo '<script>window.history.back()</script>';
