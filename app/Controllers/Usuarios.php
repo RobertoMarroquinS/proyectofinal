@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\Usuario;
+use Exception;
 
 class Usuarios extends Controller
 {
@@ -17,11 +18,11 @@ class Usuarios extends Controller
         $num = $ejecutar->getNumRows();
         if ($num==1) {
             $usuario = $ejecutar->getRow(0);
-            if ($usuario->id_usuario == 1) {
-                return view('menuadmin');
+            if ($usuario->id_tipo_usuario == 1) {
+                return redirect()->route('menuadministrador');
             }
-            if ($usuario->id_usuario == 2);
-            return view('menutrabajador');
+            if ($usuario->id_tipo_usuario == 2);
+                return redirect()->route('menutrabajador');
         } else {
             echo '<script>alert("Datos incorrectos")</script>';
             echo '<script>window.history.back()</script>';

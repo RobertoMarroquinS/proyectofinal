@@ -54,6 +54,8 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
 $routes->post('usuario', 'Usuarios::iniciarSesion'); //esta bien
+$routes->get('menutrabajador','MenuTrabajador::verMenu');
+$routes->get('menuadministrador','MenuAdministrador::verMenu');
 $routes->get('trabajador', 'Trabajadores::verTrabajadores'); // esta bien
 $routes->post('nuevoTrabajador', 'Trabajadores::agregarTrabajador');
 $routes->get('datos_trabajador/(:num)', 'Trabajadores::datosTrabajadores/$1');
