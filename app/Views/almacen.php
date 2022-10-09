@@ -27,7 +27,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="<?= base_url('nuevoAlmacen') ?>" method="post">
+                        <form action="<?= base_url('nuevoalmacen') ?>" method="post">
                             <div class="mb-3">
                                 <label for="txt_idalmacen" class="form-label">ID Almacen</label>
                                 <input type="text" class="form-control" name="txt_idalmacen" placeholder="Ingrese ID Almacen">

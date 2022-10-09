@@ -21,4 +21,27 @@ class Almacenes extends Controller{
         $datos['lista_almacen'] = $almacen->findAll();
         return view('almacen', $datos);   
 }
+public function datosAlmacen($idalmacen=null){
+    $almacen = new Almacen();
+    $datos['almacen']=$almacen->where('id_almacen',$idalmacen)->first();
+    return view('frm_actualizar_almacen',$datos);
+}
+public function actualizarAlmacen(){
+    $almacen = new Almacen();
+    $idalmacen=$this->request->getVar('txt_idalmacen');
+    $idtalmacen=$this->request->getVar('txt_idtalmacen');
+    $nombre=$this->request->getVar('txt_nombre');
+    $direccion=$this->request->getVar('txt_direccion');
+    $telefono=$this->request->getVar('txt_telefono');
+    $datos=['id_tipo_almacen'=>$idtalmacen,'nombre'=>$nombre,'direccion'=>$direccion,'telefono'=>$telefono];
+    $almacen->update($idalmacen,$datos);
+    $datos['lista_almacen'] = $almacen->findAll();
+    return view('almacen', $datos);  
+}
+public function eliminarAlmacen($idalmacen){
+    $almacen = new Almacen();
+    $almacen->delete($idalmacen);
+    $datos['lista_almacen'] = $almacen->findAll();
+    return view('almacen', $datos); 
+}
 }

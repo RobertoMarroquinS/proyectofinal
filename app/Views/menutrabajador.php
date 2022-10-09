@@ -14,10 +14,10 @@
            <u><b><a href="#" class="list-group-item list-group-item-action active" aria-current="true">
                 Menú Principal
             </a></b></u>
+            <a href="<?=base_url('talmacen') ?>" class="list-group-item list-group-item-action">Tipos Almacenes</a>
+            <a href="<?=base_url('almacen') ?>" class="list-group-item list-group-item-action">Almacenes</a>
             <a href="<?=base_url('') ?>" class="list-group-item list-group-item-action">Tipos Productos</a>
             <a href="<?=base_url('') ?>" class="list-group-item list-group-item-action">Productos</a>
-            <a href="<?=base_url('') ?>" class="list-group-item list-group-item-action">Tipos Almacenes</a>
-            <a href="<?=base_url('') ?>" class="list-group-item list-group-item-action">Almacenes</a>
             <a href="<?=base_url('') ?>" class="list-group-item list-group-item-action">Tipos Transacciones</a>
             <a href="<?=base_url('') ?>" class="list-group-item list-group-item-action">Inventarios</a>
         </div>

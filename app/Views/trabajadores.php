@@ -104,7 +104,7 @@
                 <td><?=$registro['id_tipo_usuario'] ?></td>
                 <td><?=$registro['id_almacen'] ?></td>
                 <td>
-                <a href="<?= base_url('datos_trabajadores/' . $registro['id_usuario']) ?>"><i class="fa-solid fa-pencil"></i></a>
+                <a href="<?= base_url('datos_trabajador/' . $registro['id_usuario']) ?>"><i class="fa-solid fa-pencil"></i></a>
                 <a href="<?= base_url('eliminar_trabajador/' . $registro['id_usuario']) ?>"><i class="fa-solid fa-trash-can"></i></a>
                 </td>
             </tr>

@@ -30,7 +30,7 @@ class Trabajadores extends Controller{
 
     public function datosTrabajadores($idusuario=null){
         $trabajador = new Usuario();
-        $datos['usuarios']=$trabajador->where('id_usuario',$idusuario)->first();
+        $datos['usuario']=$trabajador->where('id_usuario',$idusuario)->first();
         return view('frm_actualizar_trabajador',$datos);
     }
 
@@ -50,7 +50,7 @@ class Trabajadores extends Controller{
         $datos['lista_trabajador'] = $trabajador->findAll();
         return view('trabajadores',$datos);
     }
-    public function eliminarTrabajador($idusuario){
+    public function eliminarTrabajadores($idusuario){
         $trabajador = new Usuario();
         $trabajador->delete($idusuario);
         $datos['lista_trabajador'] = $trabajador->findAll();
