@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Facturas</title>
+    <title>Trabajadores</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 
@@ -28,7 +28,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="<?= base_url('trabajadores') ?>" method="post">
+                        <form action="<?= base_url('nuevoTrabajador') ?>" method="post">
                             <div class="mb-3">
                                 <label for="txt_idusuario" class="form-label">ID Usuario</label>
                                 <input type="text" class="form-control" name="txt_idusuario" placeholder="Ingrese ID Usuario">
@@ -47,7 +47,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="txt_dpi" class="form-label">DPI</label>
-                                <input type="date" class="form-control" name="txt_dpi" placeholder="Ingrese DPI">
+                                <input type="text" class="form-control" name="txt_dpi" placeholder="Ingrese DPI">
                             </div>
                             <div class="mb-3">
                                 <label for="txt_email" class="form-label">Email</label>
@@ -104,8 +104,8 @@
                 <td><?=$registro['id_tipo_usuario'] ?></td>
                 <td><?=$registro['id_almacen'] ?></td>
                 <td>
-                <a href="<?= base_url('datos_facturas/' . $registro['id_usuario']) ?>"><i class="fa-solid fa-pencil"></i></a>
-                <a href="<?= base_url('eliminar_facturas/' . $registro['id_usuario']) ?>"><i class="fa-solid fa-trash-can"></i></a>
+                <a href="<?= base_url('datos_trabajadores/' . $registro['id_usuario']) ?>"><i class="fa-solid fa-pencil"></i></a>
+                <a href="<?= base_url('eliminar_trabajador/' . $registro['id_usuario']) ?>"><i class="fa-solid fa-trash-can"></i></a>
                 </td>
             </tr>
                     <?php

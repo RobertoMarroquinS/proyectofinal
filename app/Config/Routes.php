@@ -55,3 +55,7 @@ if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 }
 $routes->post('usuario', 'Usuarios::iniciarSesion');
 $routes->get('trabajador', 'Trabajadores::verTrabajadores');
+$routes->post('nuevoTrabajador', 'Trabajadores::agregarTrabajador');
+$routes->get('datos_trabajadores/(:num)', 'Trabajadores::datosTrabajadores/$1');
+$routes->post('actualizar_trabajador','Trabajadores::actualizarTrabajadores');
+$routes->get('eliminar_trabajador/(:um)','Trabajadores::eliminarTrabajadores/$1');
