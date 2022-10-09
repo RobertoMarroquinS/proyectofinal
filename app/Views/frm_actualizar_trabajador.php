@@ -9,7 +9,9 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container"><br>
+    <a href="<?= base_url();?>/logout" class="btn btn-primary"> &lt;&lt; Cerrar Sesion</a><br><br>
+    <a href="<?= base_url('trabajador') ?>" class="btn btn-primary"> &lt;&lt; Regresar</a>
         <h1>Actualizar Trabajador</h1>
         <form action="<?= base_url('actualizar_trabajador') ?>" method="post">
             <div class="mb-3">

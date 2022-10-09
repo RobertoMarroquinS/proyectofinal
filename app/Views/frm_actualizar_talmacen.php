@@ -8,6 +8,8 @@
 </head>
 <body>
     <div class="container">
+    <a href="<?= base_url();?>/logout" class="btn btn-primary"> &lt;&lt; Cerrar Sesion</a><br><br>
+    <a href="<?= base_url('talmacen') ?>" class="btn btn-primary"> &lt;&lt; Regresar</a>
         <h1>Actualizar Tipo Almacen</h1>
         <form action="<?= base_url('actualizar_talmacen') ?>" method="post">
             <div class="mb-3">

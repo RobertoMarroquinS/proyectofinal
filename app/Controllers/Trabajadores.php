@@ -5,12 +5,36 @@ use CodeIgniter\Controller;
 use App\Models\Usuario;
 class Trabajadores extends Controller{
     public function verTrabajadores(){
+        session_start();
+        if (isset($_SESSION['id_usuario'])) {
+            if (isset($_SESSION['id_tipo_usuario'])) {
+                if($_SESSION['id_tipo_usuario']!=1){
+                    return redirect()->route('');
+                }
+            } else {
+            return redirect()->route('');
+            }
+        } else {
+            return redirect()->route('');
+        }
      $trabajador = new Usuario();
     $datos['lista_trabajador'] = $trabajador->findAll();
     return view('trabajadores',$datos);
     }
 
     public function agregarTrabajador(){
+        session_start();
+        if (isset($_SESSION['id_usuario'])) {
+            if (isset($_SESSION['id_tipo_usuario'])) {
+                if($_SESSION['id_tipo_usuario']!=1){
+                    return redirect()->route('');
+                }
+            } else {
+            return redirect()->route('');
+            }
+        } else {
+            return redirect()->route('');
+        }
         $idusuario=$this->request->getVar('txt_idusuario');
         $nombre=$this->request->getVar('txt_nombre');
         $apellido=$this->request->getVar('txt_apellido');
@@ -29,12 +53,36 @@ class Trabajadores extends Controller{
     }
 
     public function datosTrabajadores($idusuario=null){
+        session_start();
+        if (isset($_SESSION['id_usuario'])) {
+            if (isset($_SESSION['id_tipo_usuario'])) {
+                if($_SESSION['id_tipo_usuario']!=1){
+                    return redirect()->route('');
+                }
+            } else {
+            return redirect()->route('');
+            }
+        } else {
+            return redirect()->route('');
+        }
         $trabajador = new Usuario();
         $datos['usuario']=$trabajador->where('id_usuario',$idusuario)->first();
         return view('frm_actualizar_trabajador',$datos);
     }
 
     public function actualizarTrabajadores(){
+        session_start();
+        if (isset($_SESSION['id_usuario'])) {
+            if (isset($_SESSION['id_tipo_usuario'])) {
+                if($_SESSION['id_tipo_usuario']!=1){
+                    return redirect()->route('');
+                }
+            } else {
+            return redirect()->route('');
+            }
+        } else {
+            return redirect()->route('');
+        }
         $idusuario=$this->request->getVar('txt_idusuario');
         $nombre=$this->request->getVar('txt_nombre');
         $apellido=$this->request->getVar('txt_apellido');
@@ -51,6 +99,18 @@ class Trabajadores extends Controller{
         return view('trabajadores',$datos);
     }
     public function eliminarTrabajadores($idusuario){
+        session_start();
+        if (isset($_SESSION['id_usuario'])) {
+            if (isset($_SESSION['id_tipo_usuario'])) {
+                if($_SESSION['id_tipo_usuario']!=1){
+                    return redirect()->route('');
+                }
+            } else {
+            return redirect()->route('');
+            }
+        } else {
+            return redirect()->route('');
+        }
         $trabajador = new Usuario();
         $trabajador->delete($idusuario);
         $datos['lista_trabajador'] = $trabajador->findAll();

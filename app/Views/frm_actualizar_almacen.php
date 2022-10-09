@@ -7,7 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container">
+    <div class="container"><br>
+    <a href="<?= base_url();?>/logout" class="btn btn-primary"> &lt;&lt; Cerrar Sesion</a><br><br>
+    <a href="<?= base_url('almacen')?>" class="btn btn-primary"> &lt;&lt; Regresar</a>
         <h1>Actualizar Tipo Almacen</h1>
         <form action="<?= base_url('actualizar_almacen') ?>" method="post">
             <div class="mb-3">

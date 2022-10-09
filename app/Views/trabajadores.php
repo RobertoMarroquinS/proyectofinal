@@ -11,9 +11,10 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container"><br>
+    <a href="<?= base_url();?>/logout" class="btn btn-primary"> &lt;&lt; Cerrar Sesion</a>
         <h1 class="text-center">Usuarios</h1>
-        <a href="<?= base_url('') ?>" class="btn btn-primary"> &lt;&lt; Regresar</a>
+        <a href="<?= base_url('menuadministrador') ?>" class="btn btn-primary"> &lt;&lt; Regresar</a>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Agregar Trabajador

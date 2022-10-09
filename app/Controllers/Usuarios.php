@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\Usuario;
-use Exception;
 
 class Usuarios extends Controller
 {
@@ -18,6 +17,9 @@ class Usuarios extends Controller
         $num = $ejecutar->getNumRows();
         if ($num==1) {
             $usuario = $ejecutar->getRow(0);
+            session_start();
+            $_SESSION['id_usuario'] = $usuario->id_usuario;
+            $_SESSION['id_tipo_usuario'] = $usuario->id_tipo_usuario;
             if ($usuario->id_tipo_usuario == 1) {
                 return redirect()->route('menuadministrador');
             }
@@ -28,5 +30,12 @@ class Usuarios extends Controller
             echo '<script>window.history.back()</script>';
         }
 
+    }
+    public function cerrarSesion(){
+
+        session_start();
+        session_destroy();
+        echo "entra";
+        return redirect()->route('');
     }
 }
