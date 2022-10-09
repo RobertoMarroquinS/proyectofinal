@@ -53,9 +53,21 @@ $routes->get('/', 'Home::index');
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
-$routes->post('usuario', 'Usuarios::iniciarSesion');
-$routes->get('trabajador', 'Trabajadores::verTrabajadores');
+$routes->post('usuario', 'Usuarios::iniciarSesion'); //esta bien
+$routes->get('trabajador', 'Trabajadores::verTrabajadores'); // esta bien
 $routes->post('nuevoTrabajador', 'Trabajadores::agregarTrabajador');
 $routes->get('datos_trabajadores/(:num)', 'Trabajadores::datosTrabajadores/$1');
 $routes->post('actualizar_trabajador','Trabajadores::actualizarTrabajadores');
-$routes->get('eliminar_trabajador/(:um)','Trabajadores::eliminarTrabajadores/$1');
+$routes->get('eliminar_trabajador/(:num)','Trabajadores::eliminarTrabajadores/$1');
+
+$routes->get('talmacen', 'Talmacenes::verTalmacen');
+$routes->post('nuevoTalmacen', 'Talmacenes::agregarTalmacen');
+$routes->get('datos_talmacen/(:num)', 'Talmacenes::datosTalmacen/$1');
+$routes->post('actualizar_talmacen','Talmacenes::actualizarTalmacen');
+$routes->get('eliminar_talmacen/(:num)','Talmacenes::eliminarTalmacen/$1');
+
+$routes->get('almacen', 'Almacenes::verAlmacen'); 
+$routes->post('nuevoAlmacen', 'Almacenes::agregarAlmacen');
+$routes->get('datos_Almacen/(:num)', 'Almacenes::datosAlmacen/$1');
+$routes->post('actualizar_Almacen','Almacenes::actualizarAlmacen');
+$routes->get('eliminar_Almacen/(:num)','Almacenes::eliminarAlmacen/$1');

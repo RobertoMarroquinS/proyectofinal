@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <h1 class="text-center">Usuarios</h1>
-        <a href="<?= base_url()?>" class="btn btn-primary"> &lt;&lt; Regresar</a>
+        <a href="<?= base_url('') ?>" class="btn btn-primary"> &lt;&lt; Regresar</a>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Agregar Trabajador
@@ -24,7 +24,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Datos de Empleados</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Datos del Empleado</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -59,11 +59,11 @@
                             </div>
                             <div class="mb-3">
                                 <label for="txt_id_tipo_usuario" class="form-label">ID Tipo Usuario</label>
-                                <input type="password" class="form-control" name="txt_id_tipo_usuario" placeholder="Ingrese ID Tipo Usuario">
+                                <input type="text" class="form-control" name="txt_id_tipo_usuario" placeholder="Ingrese ID Tipo Usuario">
                             </div>
                             <div class="mb-3">
                                 <label for="txt_id_almacen" class="form-label">ID Almacen</label>
-                                <input type="password" class="form-control" name="txt_id_almacen" placeholder="Ingrese ID Almacen">
+                                <input type="text" class="form-control" name="txt_id_almacen" placeholder="Ingrese ID Almacen">
                             </div>
                             <div class="mb-3">
                             <button type="submit" class="btn btn-primary" value="Guardar Cliente">Guardar</button>
@@ -85,7 +85,7 @@
                 <th>Email</th>
                 <th>Contraseña</th>
                 <th>ID Tipo Usuario</th>
-                <th>Tipo Almacen</th>
+                <th>ID Tipo Almacen</th>
                 <th>Acciones </th>
             </tr>
             </thead>

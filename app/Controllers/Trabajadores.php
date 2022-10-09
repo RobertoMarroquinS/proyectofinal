@@ -9,6 +9,7 @@ class Trabajadores extends Controller{
     $datos['lista_trabajador'] = $trabajador->findAll();
     return view('trabajadores',$datos);
     }
+
     public function agregarTrabajador(){
         $idusuario=$this->request->getVar('txt_idusuario');
         $nombre=$this->request->getVar('txt_nombre');
@@ -19,7 +20,7 @@ class Trabajadores extends Controller{
         $contraseña=$this->request->getVar('txt_contraseña');
         $idtipousuario=$this->request->getVar('txt_id_tipo_usuario');
         $idalmacen=$this->request->getVar('txt_id_almacen');
-        $datos=['id_usuario'=>$idusuario,'nombre'=>$nombre,'apellido'=>$apellido,'celular'=>$celular,'dpi'=>$dpi,'email'=>$email,'contrasena'=>$contraseña,'id_tipo_usuario'=>$idtipousuario,'id_almacen'=>$idalmacen];
+        $datos=['id_usuario'=>$idusuario, 'nombre'=>$nombre, 'apellido'=>$apellido, 'celular'=>$celular, 'dpi'=>$dpi, 'email'=>$email, 'contrasena'=>$contraseña, 'id_tipo_usuario'=>$idtipousuario, 'id_almacen'=>$idalmacen];
         $trabajador = new Usuario();
         $trabajador ->insert($datos);
         $datos['lista_trabajador'] = $trabajador->findAll();
@@ -29,7 +30,7 @@ class Trabajadores extends Controller{
 
     public function datosTrabajadores($idusuario=null){
         $trabajador = new Usuario();
-        $datos['usuario']=$trabajador->where('id_usuario',$idusuario)->first();
+        $datos['usuarios']=$trabajador->where('id_usuario',$idusuario)->first();
         return view('frm_actualizar_trabajador',$datos);
     }
 
@@ -50,7 +51,7 @@ class Trabajadores extends Controller{
         return view('trabajadores',$datos);
     }
     public function eliminarTrabajador($idusuario){
-        $trabajador = new Usuario();;
+        $trabajador = new Usuario();
         $trabajador->delete($idusuario);
         $datos['lista_trabajador'] = $trabajador->findAll();
         return view('trabajadores',$datos);
