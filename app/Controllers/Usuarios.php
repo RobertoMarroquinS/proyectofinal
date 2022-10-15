@@ -9,9 +9,9 @@ class Usuarios extends Controller
 {
     public function iniciarSesion()
     {
-        $usuario = $this->request->getVar("txtusuario");
+        $usuario = $this->request->getVar("txtemail");
         $contraseña = $this->request->getVar("txtpass");
-        $sql = "select * from usuarios where id_usuario={$usuario} and contrasena='{$contraseña}'";
+        $sql = "select * from usuarios where email='{$usuario}' and contrasena='{$contraseña}'";
         $conexion = db_connect();
         $ejecutar = $conexion->query($sql);
         $num = $ejecutar->getNumRows();

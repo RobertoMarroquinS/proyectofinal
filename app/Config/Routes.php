@@ -74,3 +74,16 @@ $routes->post('nuevoalmacen', 'Almacenes::agregarAlmacen');
 $routes->get('datos_almacen/(:num)', 'Almacenes::datosAlmacen/$1');
 $routes->post('actualizar_almacen','Almacenes::actualizarAlmacen');
 $routes->get('eliminar_almacen/(:num)','Almacenes::eliminarAlmacen/$1');
+
+//Rutas de Carlos
+$routes->get('tproducto', 'Tproductos::verTproducto'); 
+$routes->post('nuevotproducto', 'Tproductos::agregarTproducto');
+$routes->get('datos_tproducto/(:num)', 'Tproductos::datosTproducto/$1');
+$routes->post('actualizar_tproducto','Tproductos::actualizarTproducto');
+$routes->get('eliminar_tproducto/(:num)','Tproductos::eliminarTproducto/$1');
+
+$routes->get('producto', 'Productos::verproducto'); 
+$routes->post('nuevoproducto', 'Productos::agregarproducto');
+$routes->get('datos_producto/(:num)', 'Productos::datosproducto/$1');
+$routes->post('actualizar_producto','Productos::actualizarproducto');
+$routes->get('eliminar_producto/(:num)','Productos::eliminarproducto/$1');

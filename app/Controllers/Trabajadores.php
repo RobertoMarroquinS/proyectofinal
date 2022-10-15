@@ -18,7 +18,11 @@ class Trabajadores extends Controller{
             return redirect()->route('');
         }
      $trabajador = new Usuario();
-    $datos['lista_trabajador'] = $trabajador->findAll();
+    $datos['lista_trabajador'] = $trabajador
+    ->join('tipos_usuarios', 'tipos_usuarios.id_tipo_usuario', '=', 'usuarios.id_tipo_usuario')
+    ->select('usuarios.id_usuario, usuarios.nombre, usuarios.apellido, usuarios.celular, usuarios.dpi, usuarios.email, usuarios.contrasena, tipos_usuarios.nombre, usuarios.id_almacen')
+    ->get_compiled_select()->get();
+
     return view('trabajadores',$datos);
     }
 

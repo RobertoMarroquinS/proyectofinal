@@ -19,8 +19,8 @@
             <div class="col-md-4 offset-md-4 bg-light border rounded-2"><br>
                 <form action="<?=base_url('usuario') ?>"method="post"> 
                     <div class="mb-3">
-                        <label for="txtusuario" class="form-label">Usuario</label>
-                        <input type="text" class="form-control" name="txtusuario" placeholder="Ingrese Usuario">
+                        <label for="txtemail" class="form-label">Email</label>
+                        <input type="text" class="form-control" name="txtemail" placeholder="Ingrese su Email">
                     </div>
                     <div class="mb-3">
                         <label for="txtpass" class="form-label">Password</label>
