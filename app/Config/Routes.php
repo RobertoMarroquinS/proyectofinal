@@ -75,7 +75,7 @@ $routes->get('datos_almacen/(:num)', 'Almacenes::datosAlmacen/$1');
 $routes->post('actualizar_almacen','Almacenes::actualizarAlmacen');
 $routes->get('eliminar_almacen/(:num)','Almacenes::eliminarAlmacen/$1');
 
-//Rutas de Carlos
+//Rutas de David
 $routes->get('tproducto', 'Tproductos::verTproducto'); 
 $routes->post('nuevotproducto', 'Tproductos::agregarTproducto');
 $routes->get('datos_tproducto/(:num)', 'Tproductos::datosTproducto/$1');
@@ -87,3 +87,22 @@ $routes->post('nuevoproducto', 'Productos::agregarproducto');
 $routes->get('datos_producto/(:num)', 'Productos::datosproducto/$1');
 $routes->post('actualizar_producto','Productos::actualizarproducto');
 $routes->get('eliminar_producto/(:num)','Productos::eliminarproducto/$1');
+
+//Rutas de Carlos
+$routes->get('cliente', 'Clientes::verCliente'); 
+$routes->post('nuevocliente', 'Clientes::agregarCliente');
+$routes->get('datos_cliente/(:num)', 'Clientes::datosCliente/$1');
+$routes->post('actualizar_cliente','Clientes::actualizarCliente');
+$routes->get('eliminar_cliente/(:num)','Clientes::eliminarCliente/$1');
+
+$routes->get('venta', 'Ventas::verVenta'); 
+$routes->post('nuevoventa', 'Ventas::agregarVenta');
+$routes->get('datos_venta/(:num)', 'Ventas::datosVenta/$1');
+$routes->post('actualizar_venta','Ventas::actualizarVenta');
+$routes->get('eliminar_venta/(:num)','Ventas::eliminarVenta/$1');
+
+$routes->get('dventa', 'Dventas::verDventa'); 
+$routes->post('nuevodventa', 'Dventas::agregarDventa');
+$routes->get('datos_dventa/(:num)', 'Dventas::datosDventa/$1');
+$routes->post('actualizar_dventa','Dventas::actualizarDventa');
+$routes->get('eliminar_dventa/(:num)','Dventas::eliminarDventa/$1');

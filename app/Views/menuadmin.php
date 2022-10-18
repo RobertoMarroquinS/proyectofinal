@@ -22,9 +22,9 @@
             <a href="<?=base_url('producto') ?>" class="list-group-item list-group-item-action">Productos</a>
             <a href="<?=base_url('') ?>" class="list-group-item list-group-item-action">Inventarios</a>
             <a href="<?=base_url('') ?>" class="list-group-item list-group-item-action">Traslado</a>
-            <a href="<?=base_url('') ?>" class="list-group-item list-group-item-action">Detalle de Ventas</a>
-            <a href="<?=base_url('') ?>" class="list-group-item list-group-item-action">Venta</a>
-            <a href="<?=base_url('') ?>" class="list-group-item list-group-item-action">Clientes</a>
+            <a href="<?=base_url('dventa') ?>" class="list-group-item list-group-item-action">Detalle de Ventas</a>
+            <a href="<?=base_url('venta') ?>" class="list-group-item list-group-item-action">Venta</a>
+            <a href="<?=base_url('cliente') ?>" class="list-group-item list-group-item-action">Clientes</a>
 
 
 
