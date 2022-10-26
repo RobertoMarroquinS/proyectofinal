@@ -21,6 +21,10 @@
                 <input type="text" class="form-control" name="txt_idtproducto" value="<?= $productos['id_tipo_producto'] ?>">
             </div>
             <div class="mb-3">
+                <label for="txt_nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" name="txt_nombre" value="<?= $productos['nombre'] ?>">
+            </div>
+            <div class="mb-3">
                 <label for="txt_descripcion" class="form-label">Descripcion</label>
                 <input type="text" class="form-control" name="txt_descripcion" value="<?= $productos['descripcion'] ?>">
             </div>

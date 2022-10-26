@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\Almacen;
+use App\Models\VwAlmacen;
 class Almacenes extends Controller{
     public function verAlmacen(){
         session_start();
@@ -14,7 +15,7 @@ class Almacenes extends Controller{
         } else {
             return redirect()->route('');
         }
-        $almacen = new Almacen();
+        $almacen = new VwAlmacen();
         $datos['lista_almacen'] = $almacen->findAll();
         return view('almacen', $datos);            
     }
@@ -72,7 +73,7 @@ public function actualizarAlmacen(){
     $datos=['id_tipo_almacen'=>$idtalmacen,'nombre'=>$nombre,'direccion'=>$direccion,'telefono'=>$telefono];
     $almacen->update($idalmacen,$datos);
     $datos['lista_almacen'] = $almacen->findAll();
-    return view('almacen', $datos);  
+    return redirect()->route('almacen'); 
 }
 public function eliminarAlmacen($idalmacen){
     session_start();
@@ -87,6 +88,6 @@ public function eliminarAlmacen($idalmacen){
     $almacen = new Almacen();
     $almacen->delete($idalmacen);
     $datos['lista_almacen'] = $almacen->findAll();
-    return view('almacen', $datos); 
+    return redirect()->route('almacen');
 }
 }

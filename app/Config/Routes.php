@@ -53,10 +53,12 @@ $routes->get('/', 'Home::index');
 if (is_file(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
     require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';
 }
+//Rutas de Roberto
 $routes->post('usuario', 'Usuarios::iniciarSesion'); //esta bien
 $routes->get('menutrabajador','MenuTrabajador::verMenu');
 $routes->get('menuadministrador','MenuAdministrador::verMenu');
 $routes->get('logout','Usuarios::cerrarSesion');
+
 $routes->get('trabajador', 'Trabajadores::verTrabajadores'); // esta bien
 $routes->post('nuevoTrabajador', 'Trabajadores::agregarTrabajador');
 $routes->get('datos_trabajador/(:num)', 'Trabajadores::datosTrabajadores/$1');
@@ -100,6 +102,20 @@ $routes->post('nuevoventa', 'Ventas::agregarVenta');
 $routes->get('datos_venta/(:num)', 'Ventas::datosVenta/$1');
 $routes->post('actualizar_venta','Ventas::actualizarVenta');
 $routes->get('eliminar_venta/(:num)','Ventas::eliminarVenta/$1');
+
+//
+$routes->get('inventario', 'Inventarios::verInventario'); 
+$routes->post('nuevoinventario', 'Inventarios::agregarInventario');
+$routes->get('datos_inventario/(:num)', 'Inventarios::datosInventario/$1');
+$routes->post('actualizar_inventario','Inventarios::actualizarInventario');
+$routes->get('eliminar_inventario/(:num)','Inventarios::eliminarInventario/$1');
+
+//
+$routes->get('traslado', 'Traslados::verTraslado'); 
+$routes->post('nuevotraslado', 'Traslados::agregarTraslado');
+$routes->get('datos_traslado/(:num)', 'Traslados::datosTraslado/$1');
+$routes->post('actualizar_traslado','Traslados::actualizarTraslado');
+$routes->get('eliminar_traslado/(:num)','Traslados::eliminarTraslado/$1');
 
 $routes->get('dventa', 'Dventas::verDventa'); 
 $routes->post('nuevodventa', 'Dventas::agregarDventa');

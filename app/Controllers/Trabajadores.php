@@ -3,6 +3,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\Usuario;
+use App\Models\VwTrabajador;
 class Trabajadores extends Controller{
     public function verTrabajadores(){
         session_start();
@@ -17,11 +18,8 @@ class Trabajadores extends Controller{
         } else {
             return redirect()->route('');
         }
-     $trabajador = new Usuario();
-    $datos['lista_trabajador'] = $trabajador
-    ->join('tipos_usuarios', 'tipos_usuarios.id_tipo_usuario', '=', 'usuarios.id_tipo_usuario')
-    ->select('usuarios.id_usuario, usuarios.nombre, usuarios.apellido, usuarios.celular, usuarios.dpi, usuarios.email, usuarios.contrasena, tipos_usuarios.nombre, usuarios.id_almacen')
-    ->get_compiled_select()->get();
+    $trabajador = new VwTrabajador();
+    $datos['lista_trabajador'] = $trabajador->findAll();
 
     return view('trabajadores',$datos);
     }
@@ -51,6 +49,7 @@ class Trabajadores extends Controller{
         $datos=['id_usuario'=>$idusuario, 'nombre'=>$nombre, 'apellido'=>$apellido, 'celular'=>$celular, 'dpi'=>$dpi, 'email'=>$email, 'contrasena'=>$contraseña, 'id_tipo_usuario'=>$idtipousuario, 'id_almacen'=>$idalmacen];
         $trabajador = new Usuario();
         $trabajador ->insert($datos);
+        $trabajador = new VwTrabajador();
         $datos['lista_trabajador'] = $trabajador->findAll();
         return view('trabajadores',$datos);
         
@@ -100,7 +99,7 @@ class Trabajadores extends Controller{
         $trabajador = new Usuario();
         $trabajador->update($idusuario,$datos);
         $datos['lista_trabajador'] = $trabajador->findAll();
-        return view('trabajadores',$datos);
+        return redirect()->route('trabajador');
     }
     public function eliminarTrabajadores($idusuario){
         session_start();
@@ -117,7 +116,8 @@ class Trabajadores extends Controller{
         }
         $trabajador = new Usuario();
         $trabajador->delete($idusuario);
+        $trabajador = new VwTrabajador();
         $datos['lista_trabajador'] = $trabajador->findAll();
-        return view('trabajadores',$datos);
+        return redirect()->route('trabajador');
     }
 }

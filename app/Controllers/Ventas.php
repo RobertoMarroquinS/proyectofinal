@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\Venta;
-
+use App\Models\VwVenta;
 class Ventas extends Controller
 {
     public function verVenta()
@@ -18,7 +18,7 @@ class Ventas extends Controller
         } else {
             return redirect()->route('');
         }
-        $venta = new Venta();
+        $venta = new VwVenta();
         $datos['lista_venta'] = $venta->findAll();
         return view('venta', $datos);
     }
@@ -42,7 +42,7 @@ class Ventas extends Controller
         $venta = new Venta();
         $venta->insert($datos);
         $datos['lista_venta'] = $venta->findAll();
-        return view('venta', $datos);
+        return redirect()->route('venta');
     }
     public function datosVenta($idventa = null)
     {
@@ -79,7 +79,7 @@ class Ventas extends Controller
         $datos = ['id_cliente' => $idcliente, 'id_usuario' => $idusuario, 'fecha' => $fecha, 'no_factura' => $nofactura];
         $venta->update($idventa, $datos);
         $datos['lista_venta'] = $venta->findAll();
-        return view('venta', $datos);
+        return redirect()->route('venta');
     }
     public function eliminarVenta($idventa)
     {
@@ -95,6 +95,6 @@ class Ventas extends Controller
         $venta = new Venta();
         $venta->delete($idventa);
         $datos['lista_venta'] = $venta->findAll();
-        return view('venta', $datos);
+        return redirect()->route('venta');
     }
 }

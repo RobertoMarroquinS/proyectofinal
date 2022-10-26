@@ -4,12 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Trabajadores</title>
+    <title>Inventario</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="<?= base_url('css/main.css') ?>">
-
     <link rel="stylesheet" type="text/css" href="<?= base_url('datatables/datatables.min.css') ?>">
     <!--datables estilo bootstrap 4 CSS-->
     <link rel="stylesheet" type="text/css" href="<?= base_url('datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css') ?>">
@@ -17,14 +16,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 
     <link rel="stylesheet" href="<?= base_url('css/jquery.dataTables.min.css') ?>">
-
     <style>
         .dataTables_length {
             margin-top: 3%;
             width: fit-content;
             white-space: nowrap;
         }
-
         .dataTables_filter {
             margin-top: -2.5%;
             width: fit-content;
@@ -36,101 +33,79 @@
 
 <body>
     <div class="container"><br>
-        <a href="<?= base_url(); ?>/logout" class="btn btn-primary"> &lt;&lt; Cerrar Sesion</a>
-        <h1 class="text-center">Usuarios</h1>
-        <a href="<?= base_url('menuadministrador') ?>" class="btn btn-primary"> &lt;&lt; Regresar</a>
+    <a href="<?= base_url();?>/logout" class="btn btn-primary"> &lt;&lt; Cerrar Sesion</a><br><br>
+        <h1 class="text-center">Inventario</h1>
+    <a href="<?= base_url('menuadministrador') ?>" class="btn btn-primary"> &lt;&lt; Regresar</a>
         <!-- Button trigger modal -->
         <button type="button" class="btn btn-primary mt-3 mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Agregar Trabajador
+            Agregar Inventario
         </button>
-
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Datos del Empleado</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Inventario</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="<?= base_url('nuevoTrabajador') ?>" method="post">
+                        <form action="<?= base_url('nuevoinventario') ?>" method="post">
                             <div class="mb-3">
-                                <label for="txt_idusuario" class="form-label">ID Usuario</label>
-                                <input type="text" class="form-control" name="txt_idusuario" placeholder="Ingrese ID Usuario">
+                                <label for="txt_idinventario" class="form-label">ID Inventario</label>
+                                <input type="text" class="form-control" name="txt_idinventario" placeholder="Ingrese ID Inventario">
                             </div>
                             <div class="mb-3">
-                                <label for="txt_nombre" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" name="txt_nombre" placeholder="Ingrese Nombre">
+                                <label for="txt_idproducto" class="form-label">ID Producto</label>
+                                <input type="text" class="form-control" name="txt_idproducto" placeholder="Ingrese ID Producto">
                             </div>
                             <div class="mb-3">
-                                <label for="txt_apellido" class="form-label">Apellido</label>
-                                <input type="text" class="form-control" name="txt_apellido" placeholder="Ingrese Apellido">
+                                <label for="txt_idalmacen" class="form-label">ID Almacen</label>
+                                <input type="text" class="form-control" name="txt_idalmacen" placeholder="Ingrese ID Almacen">
                             </div>
                             <div class="mb-3">
-                                <label for="txt_celular" class="form-label">Celular</label>
-                                <input type="text" class="form-control" name="txt_celular" placeholder="Ingrese Celular">
+                                <label for="txt_existencia" class="form-label">Existencia</label>
+                                <input type="text" class="form-control" name="txt_existencia" placeholder="Ingrese Existencia">
                             </div>
                             <div class="mb-3">
-                                <label for="txt_dpi" class="form-label">DPI</label>
-                                <input type="text" class="form-control" name="txt_dpi" placeholder="Ingrese DPI">
-                            </div>
-                            <div class="mb-3">
-                                <label for="txt_email" class="form-label">Email</label>
-                                <input type="email" class="form-control" name="txt_email" placeholder="Ingrese Email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="txt_contraseña" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" name="txt_contraseña" placeholder="Ingrese Contraseña">
-                            </div>
-                            <div class="mb-3">
-                                <label for="txt_id_tipo_usuario" class="form-label">Tipo de Usuario</label>
-                                <input type="text" class="form-control" name="txt_id_tipo_usuario" placeholder="Ingrese ID Tipo Usuario">
-                            </div>
-                            <div class="mb-3">
-                                <label for="txt_id_almacen" class="form-label">Almacen</label>
-                                <input type="text" class="form-control" name="txt_id_almacen" placeholder="Ingrese ID Almacen">
+                                <label for="txt_fecha" class="form-label">Fecha</label>
+                                <input type="date" class="form-control" name="txt_fecha" placeholder="Ingrese Fecha">
                             </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-primary" value="Guardar Cliente">Guardar</button>
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                             </div>
+
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+
         <table class="table table-striped pt-5 pb-5 text-center" id='dataTable'>
             <thead>
                 <tr class="table-primary">
-                    <th>ID Usuario</th>
-                    <th>Nombre</th>
-                    <th>Apellido</th>
-                    <th>Celular</th>
-                    <th>DPI</th>
-                    <th>Email</th>
-                    <th>Contraseña</th>
-                    <th>Tipo Usuario</th>
-                    <th>Almacen</th>
-                    <th>Acciones </th>
+                    <th>ID Inventario</th>
+                    <th>Nombre Producto</th>
+                    <th>Nombre Almacen</th>
+                    <th>Existencia</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                foreach ($lista_trabajador as $registro) :
+                foreach ($lista_inventario as $registro):
                 ?>
                     <tr>
-                        <td><?= $registro['id_usuario'] ?></td>
-                        <td><?= $registro['nombre'] ?></td>
-                        <td><?= $registro['apellido'] ?></td>
-                        <td><?= $registro['celular'] ?></td>
-                        <td><?= $registro['dpi'] ?></td>
-                        <td><?= $registro['email'] ?></td>
-                        <td><?= $registro['contrasena'] ?></td>
-                        <td><?= $registro['tipo_usuario'] ?></td>
+                        <td><?= $registro['id_inventario'] ?></td>
+                        <td><?= $registro['nombre_producto'] ?></td>
                         <td><?= $registro['nombre_almacen'] ?></td>
+                        <td><?= $registro['cantidad_existencia'] ?></td>
+                        <td><?= $registro['fecha'] ?></td>
+
                         <td>
-                            <a href="<?= base_url('datos_trabajador/' . $registro['id_usuario']) ?>"><i class="fa-solid fa-pencil"></i></a>
-                            <a href="<?= base_url('eliminar_trabajador/' . $registro['id_usuario']) ?>"><i class="fa-solid fa-trash-can"></i></a>
+                            <a href="<?= base_url('datos_inventario/' . $registro['id_inventario']) ?>"><i class="fa-solid fa-pencil"></i></a>
+                            <a href="<?= base_url('eliminar_inventario/' . $registro['id_inventario']) ?>"><i class="fa-solid fa-trash-can"></i></a>
                         </td>
                     </tr>
                 <?php
@@ -140,7 +115,6 @@
         </table>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-
     <!--datatable-->
     <script src="<?= base_url('js/jquery-3.5.1.js') ?>"></script>
     
